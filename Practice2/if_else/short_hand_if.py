@@ -12,7 +12,7 @@ print("A") if a > b else print("B")
 # Assign a Value With If ... Else
 # You can also use a one-line if/else to choose a value and assign it to a variable:
 
-Example
+# Example
 a = 10
 b = 20
 bigger = a if a > b else b
@@ -20,7 +20,7 @@ print("Bigger is", bigger)
 
 # The syntax follows this pattern:
 
-variable = value_if_true if condition else value_if_false
+# variable = value_if_true if condition else value_if_false
 
 
 # Multiple Conditions on One Line
