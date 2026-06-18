@@ -1,7 +1,7 @@
 import json
 
 #open json file
-with open("sample_data.json", "r") as file:
+with open("sample-data.json", "r") as file:
     data = json.load(file)
 
 #print table header
