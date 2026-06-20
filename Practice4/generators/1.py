@@ -1,6 +1,8 @@
-import math
+def square_generator(n):
+    for i in range(n + 1):
+        yield i ** 2
 
-degree = 15
-radian = math.radians(degree)
+N = 5
 
-print("Output radian:", round(radian, 6))
+for square in square_generator(N):
+    print(square)

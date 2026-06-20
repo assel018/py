@@ -1,8 +1,9 @@
-import math
+def divisible_by_3_and_4(n):
+    for i in range(n + 1):
+        if i % 3 == 0 and i % 4 == 0:
+            yield i
 
-n = 4
-s = 25
+n = int(input("Enter n: "))
 
-area = (n * s**2) / (4 * math.tan(math.pi / n))
-
-print("The area of the polygon is:", round(area))
+for num in divisible_by_3_and_4(n):
+    print(num)

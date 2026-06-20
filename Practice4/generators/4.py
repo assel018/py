@@ -1,6 +1,6 @@
-base = 5
-height = 6
+def squares(a, b):
+    for i in range(a, b + 1):
+        yield i ** 2
 
-area = base * height
-
-print("Area:", float(area))
+for value in squares(1, 5):
+    print(value)

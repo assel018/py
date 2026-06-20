@@ -1,7 +1,7 @@
-height = 5
-base1 = 5
-base2 = 6
+def even_numbers(n):
+    for i in range(0, n + 1):
+        if i % 2 == 0:
+            yield str(i)
 
-area = ((base1 + base2) / 2) * height
-
-print("Area:", area)
+n = int(input("Enter n: "))
+print(",".join(even_numbers(n)))
