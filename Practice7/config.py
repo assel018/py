@@ -1,15 +1,20 @@
-DB_CONFIG = {
-    "host": "localhost",
-    "port": 5432,
-    "dbname": "phonebook",
-    "user": "asel"
-}
+from configparser import ConfigParser
 
-MENU = """
-0. Show all
-1. Insert value from console
-2. Insert value from CSV
-3. Update name or number
-4. Search name
-5. Delete contact
-"""
+def load_config(filename='database.ini', section='postgresql'):
+    parser = ConfigParser()
+    parser.read(filename)
+
+    # get section, default to postgresql
+    config = {}
+    if parser.has_section(section):
+        params = parser.items(section)
+        for param in params:
+            config[param[0]] = param[1]
+    else:
+        raise Exception('Section {0} not found in the {1} file'.format(section, filename))
+
+    return config
+
+if __name__ == '__main__':
+    config = load_config()
+    print(config)
