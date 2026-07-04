@@ -10,4 +10,5 @@ def get_connection():
     except psycopg2.OperationalError as e:
         logger.error(e)
         raise
-    
+
+get_connection()
