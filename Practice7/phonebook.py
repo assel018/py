@@ -233,6 +233,7 @@ def delete_contact():
     conn.close()
 
 
+
 def main():
     create_table()
 
