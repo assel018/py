@@ -49,6 +49,7 @@ def insert_from_console():
         """
         INSERT INTO phonebook(name, phone)
         VALUES (%s, %s)
+        ON CONFLICT(phone) DO NOTHING
         """,
         (name, phone)
     )
@@ -71,7 +72,6 @@ def insert_from_csv():
         reader = csv.reader(file)
         next(reader)
         for row in reader:
-            print(row)
             cur.execute(
             """
             INSERT INTO phonebook(name, phone)
@@ -233,6 +233,128 @@ def delete_contact():
     conn.close()
 
 
+
+# Practice 8 - Functions & Stored Procedures
+
+
+def find_by_pattern():
+    pattern = input("Enter name or phone pattern: ")
+
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute(
+        "SELECT * FROM search_contacts(%s)",
+        (pattern,)
+    )
+
+    rows = cur.fetchall()
+
+    if not rows:
+        print("Nothing found.")
+    else:
+        print("\nResults:")
+        for row in rows:
+            print(f"ID: {row[0]} | Name: {row[1]} | Phone: {row[2]}")
+
+    cur.close()
+    conn.close()
+
+
+def pagination():
+    limit = int(input("Limit: "))
+    offset = int(input("Offset: "))
+
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute(
+        "SELECT * FROM get_contacts_page(%s, %s)",
+        (limit, offset)
+    )
+
+    rows = cur.fetchall()
+
+    if not rows:
+        print("No contacts.")
+    else:
+        print("\nContacts:")
+        for row in rows:
+            print(f"ID: {row[0]} | Name: {row[1]} | Phone: {row[2]}")
+
+    cur.close()
+    conn.close()
+
+
+def upsert_contact():
+    name = input("Enter name: ")
+    phone = input("Enter phone: ")
+
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute(
+        "CALL upsert_contact(%s, %s)",
+        (name, phone)
+    )
+
+    conn.commit()
+
+    print("Contact inserted or updated.")
+
+    cur.close()
+    conn.close()
+
+
+def insert_many_contacts():
+    path = input("Enter CSV file path: ")
+
+    names = []
+    phones = []
+
+    with open(path, "r", encoding="utf-8") as file:
+        reader = csv.reader(file)
+        next(reader)
+
+        for row in reader:
+            names.append(row[0])
+            phones.append(row[1])
+
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute(
+        "CALL bulk_insert_contacts(%s, %s)",
+        (names, phones)
+    )
+
+    conn.commit()
+
+    print("Bulk insert completed.")
+
+    cur.close()
+    conn.close()
+
+
+def delete_contact_procedure():
+    value = input("Enter username or phone: ")
+
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute(
+        "CALL delete_contact(%s)",
+        (value,)
+    )
+
+    conn.commit()
+
+    print("Contact deleted.")
+
+    cur.close()
+    conn.close()
+
+
 def main():
     create_table()
 
@@ -259,7 +381,24 @@ def main():
         elif choice == "6":
             delete_contact()
 
+        # -------- Practice 8 --------
+
         elif choice == "7":
+            find_by_pattern()
+
+        elif choice == "8":
+            pagination()
+
+        elif choice == "9":
+            upsert_contact()
+
+        elif choice == "10":
+            insert_many_contacts()
+
+        elif choice == "11":
+            delete_contact_procedure()
+
+        elif choice == "12":
             print("Goodbye!")
             break
 
