@@ -69,17 +69,19 @@ def insert_from_csv():
 
     with open(path, "r", encoding="utf-8") as file:
         reader = csv.reader(file)
-        next(reader)
+    next(reader)
 
-        for row in reader:
-            cur.execute(
-                """
-                INSERT INTO phonebook(name, phone)
-                VALUES(%s,%s)
-                ON CONFLICT(phone) DO NOTHING
-                """,
-                (row[0], row[1])
-            )
+    for row in reader:
+        print(row)   # ← добавь эту строку
+
+        cur.execute(
+            """
+            INSERT INTO phonebook(name, phone)
+            VALUES (%s, %s)
+            ON CONFLICT(phone) DO NOTHING
+            """,
+            (row[0], row[1])
+        )
 
     conn.commit()
 
