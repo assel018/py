@@ -14,7 +14,7 @@ MENU = """
 6. Delete contact
 
 Practice 8
-7. Search by pattern
+7. Search contact
 8. Pagination
 
 TSIS 1

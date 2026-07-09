@@ -36,10 +36,8 @@ END;
 $$ LANGUAGE plpgsql;
 
 
-
--- ==========================================
 -- Function 2: Pagination
--- ==========================================
+
 
 CREATE OR REPLACE FUNCTION get_contacts_page(
     page_limit INT,

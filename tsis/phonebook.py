@@ -116,9 +116,7 @@ def insert_from_console():
 
         print("\nEmail cannot be empty.\n")
         return
-
-    birthday = input("Birthday (YYYY-MM-DD): ")
-
+    
     if not validate_email(email):
         return
 
@@ -151,7 +149,30 @@ Phone type
     else:
         phone_type = "mobile"
 
-    group = input("Group: ")
+    print("""
+    Choose group
+
+    1. Family
+    2. Friends
+    3. Work
+    4. Other
+    """)
+
+    g = input("Choose: ")
+
+    if g == "1":
+        group = "Family"
+
+    elif g == "2":
+        group = "Friends"
+
+    elif g == "3":
+        group = "Work"
+
+    else:
+        group = "Other"
+
+
 
     conn = get_connection()
     cur = conn.cursor()
@@ -176,6 +197,23 @@ Phone type
 
         group_id = g[0]
 
+
+        cur.execute(
+        """
+        SELECT id
+        FROM phonebook
+        WHERE email=%s
+        """,
+        (email,)
+    )
+
+    if cur.fetchone():
+
+        print("\nEmail already exists.\n")
+
+        cur.close()
+        conn.close()
+        return
     cur.execute("""
         INSERT INTO phonebook(
             name,
