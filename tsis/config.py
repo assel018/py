@@ -13,11 +13,11 @@ MENU = """
 5. Search contacts
 6. Delete contact
 
------------ Practice 8 -----------
+Practice 8
 7. Search by pattern
 8. Pagination
 
-------------- TSIS 1 -------------
+TSIS 1
 9. Filter by group
 10. Sort contacts
 11. Export to JSON
