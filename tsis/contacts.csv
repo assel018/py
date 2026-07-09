@@ -1,0 +1,11 @@
+name,phone,email,birthday,group,phone_type
+John,87001112233,john@gmail.com,2003-05-12,Friends,mobile
+Alice,87012223344,alice@gmail.com,2002-08-17,Family,mobile
+Bob,87023334455,bob@gmail.com,2001-11-25,Work,work
+Charlie,87034445566,charlie@gmail.com,2000-02-14,Friends,home
+Emma,87056667788,emma@gmail.com,2004-07-08,Family,mobile
+David,87045556677,david@gmail.com,2002-10-30,Work,mobile
+Grace,87078889900,grace@gmail.com,2001-12-21,Friends,home
+Maria,87094445566,maria@gmail.com,2003-09-05,Family,mobile
+Oscar,87096667788,oscar@gmail.com,2000-01-18,Work,work
+Sophia,87012345678,sophia@gmail.com,2004-04-09,Friends,mobile
