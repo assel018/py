@@ -1,0 +1,90 @@
+[
+    {
+        "name": "John",
+        "email": "john@gmail.com",
+        "birthday": "2003-05-12",
+        "phone": "87001112233",
+        "phone_type": "mobile",
+        "group": "Friends"
+    },
+    {
+        "name": "Alice",
+        "email": "alice@gmail.com",
+        "birthday": "2002-08-17",
+        "phone": "87012223344",
+        "phone_type": "mobile",
+        "group": "Family"
+    },
+    {
+        "name": "Bob",
+        "email": "bob@gmail.com",
+        "birthday": "2001-11-25",
+        "phone": "87023334455",
+        "phone_type": "work",
+        "group": "Work"
+    },
+    {
+        "name": "Charlie",
+        "email": "charlie@gmail.com",
+        "birthday": "2000-02-14",
+        "phone": "87034445566",
+        "phone_type": "home",
+        "group": "Friends"
+    },
+    {
+        "name": "Emma",
+        "email": "emma@gmail.com",
+        "birthday": "2004-07-08",
+        "phone": "87056667788",
+        "phone_type": "mobile",
+        "group": "Family"
+    },
+    {
+        "name": "David",
+        "email": "david@gmail.com",
+        "birthday": "2002-10-30",
+        "phone": "87045556677",
+        "phone_type": "mobile",
+        "group": "Work"
+    },
+    {
+        "name": "Grace",
+        "email": "grace@gmail.com",
+        "birthday": "2001-12-21",
+        "phone": "87078889900",
+        "phone_type": "home",
+        "group": "Friends"
+    },
+    {
+        "name": "Maria",
+        "email": "maria@gmail.com",
+        "birthday": "2003-09-05",
+        "phone": "87094445566",
+        "phone_type": "mobile",
+        "group": "Family"
+    },
+    {
+        "name": "Oscar",
+        "email": "oscar@gmail.com",
+        "birthday": "2000-01-18",
+        "phone": "87096667788",
+        "phone_type": "work",
+        "group": "Work"
+    },
+    {
+        "name": "Sophia",
+        "email": "sophia@gmail.com",
+        "birthday": "2004-04-09",
+        "phone": "87012345678",
+        "phone_type": "mobile",
+        "group": "Friends"
+    },
+    {
+        "name": "Assel",
+        "email": "Assel@gmail.com",
+        "birthday": "2000-01-01",
+        "phone": "87003003030",
+        "phone_type": "mobile",
+        "group": "Friends"
+    }
+]
