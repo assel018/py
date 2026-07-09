@@ -16,12 +16,11 @@ def validate_phone(phone):
     contains exactly 11 digits
     """
 
-    if re.fullmatch(r"\d{10}", phone):
+    if re.fullmatch(r"8\d{9}", phone):
         return True
 
     print("\nInvalid phone number!")
-    print("Phone must start with 87 and contain exactly 11 digits.\n")
-
+    
     return False
 
 
