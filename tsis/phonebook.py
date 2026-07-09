@@ -16,7 +16,7 @@ def validate_phone(phone):
     contains exactly 11 digits
     """
 
-    if re.fullmatch(r"8\d{10}", phone):
+    if re.fullmatch(r"\d{10}", phone):
         return True
 
     print("\nInvalid phone number!")
@@ -61,7 +61,8 @@ def show_all():
             p.birthday,
             ph.phone,
             ph.type,
-            g.name
+            g.name,
+            p.created_at
 
         FROM phonebook p
 
@@ -94,6 +95,7 @@ Birthday  : {row[3]}
 Phone     : {row[4]}
 Type      : {row[5]}
 Group     : {row[6]}
+Date Added : {row[7]}
 -------------------------------------------
 """)
 
@@ -897,7 +899,8 @@ Sort by
             p.birthday,
             ph.phone,
             ph.type,
-            g.name
+            g.name,
+            p.created_at
 
         FROM phonebook p
 
@@ -924,6 +927,7 @@ Birthday  : {row[3]}
 Phone     : {row[4]}
 Type      : {row[5]}
 Group     : {row[6]}
+Date Added : {row[7]}
 ------------------------------------
 """)
 
@@ -932,9 +936,7 @@ Group     : {row[6]}
 
 
 
-# ==========================================
 # Pagination
-# ==========================================
 
 def pagination():
 
@@ -1101,9 +1103,7 @@ def delete_contact():
     conn.close()
 
 
-# ==========================================
 # Main
-# ==========================================
 
 def main():
 
